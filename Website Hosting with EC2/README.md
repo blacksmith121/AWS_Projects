@@ -12,4 +12,4 @@ Our task order will be as follows:
 
 ### Network Architecture Diagram
 
-<img width="1486" alt="image" src="https://user-images.githubusercontent.com/66903895/213867753-9dfac0ac-9f3b-4964-a5ab-d8485fd0fc80.png">
+<img width="1486" alt="image" src="Website Hosting with EC2/9.jpg">
