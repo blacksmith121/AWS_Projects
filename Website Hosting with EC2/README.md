@@ -105,7 +105,29 @@ systemctl enable httpd
 systemctl status httpd
 ```
 
- Now paste the public ipv4 address of your EC2 instance in a web browser and you should see the Apache Test page. If you can see the page below that means the Apache server is installed and working properly.
+ Now paste the public IPv4 address of your EC2 instance in a web browser and you should see the Apache Test page. If you can see the page below in your browser, that means the Apache server is installed and working properly.
 
 <img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Website%20Hosting%20with%20EC2/5.png?raw=true)">
  
+## Step 5 - Create a Simple .html Webpage and Publish it to the Instance
+
+We made it to the last step! Now we will add content to the index.html file in our EC2 instance using the command below:
+
+```
+echo "<html>This is a test webpage hosted on Apache webserver</html>" > /var/www/html/index.html
+```
+Use this command to restart the webserver:
+
+```
+systemctl restart httpd
+```
+
+Finally, enter the public IPv4 address of your EC2 instance followed by /index.html. Make sure the URL protocol is http and not https. 
+
+Example URL: HTTP://54.173.203.101/index.html 
+
+The result in your browser should look something like the screenshot below:
+
+<img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Website%20Hosting%20with%20EC2/7.png?raw=true)">
+
+That is how you host a very simple webpage using AWS. Thank you for reading! 
