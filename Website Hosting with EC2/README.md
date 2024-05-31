@@ -11,3 +11,5 @@ Our task order will be as follows:
 * Create a simple .html webpage and publish it to the instance
 
 ### Network Architecture Diagram
+
+<img width="1486" alt="image" src="https://user-images.githubusercontent.com/66903895/213867753-9dfac0ac-9f3b-4964-a5ab-d8485fd0fc80.png">
