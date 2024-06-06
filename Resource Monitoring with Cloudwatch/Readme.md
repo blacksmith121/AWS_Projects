@@ -15,7 +15,6 @@ Our task order will be as follows:
 * Test Cloudwatch Alarm
 * Check email from SNS Topic
 * Check Cloudwatch Alarm Graph
-* Create Cloudwatch Dashboard
 
 ## Step 1 - Login to AWS Console
 
@@ -165,8 +164,40 @@ Configure Actions:
 
 * Alarm state trigger: In alarm
 * Send a notification to the following SNS topic: Select an existing SNS topic
-* Send a notification to...: Choose the SNS topic you created 
+* Send a notification to...: Choose the SNS topic you created
 
 <img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Resource%20Monitoring%20with%20Cloudwatch/14.png?raw=true)">
 
+Click "Next" ----> "Create Alarm"
+
+Your Cloudwatch alarm is now created and should look something like this:
+
+<img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Resource%20Monitoring%20with%20Cloudwatch/15.png?raw=true)">
+
+Now whenever the CPU Utilization goes above 30 for more than 1 -5 minutes, you will receive an email from your SNS notification trigger. 
+
+## Step 8 - Test Cloudwatch Alarm
+
+SSH back into your EC2 instance and input the following command to run the stress test. 
+
+```
+sudo stress --cpu 10 -v --timeout 400s
+```
+This will activate the stress tool to run for 400 seconds. The CPU utilization will be at 100% or close to it for that time. Remember, we set our metric conditions to send us an alarm if the CPU utilization is over 30%
+
+## Step 9 - Check email from SNS Topic
+
+Check your email and you should see an email notification from the SNS topic you created!
+
+<img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Resource%20Monitoring%20with%20Cloudwatch/16.png?raw=true)">
+
+## Step 10 - Check Cloudwatch Alarm Graph
+
+Go back to the CloudWatch page and click Alarms ----> Then click the alarm you created.
+
+You should see a graph and it will show you where the CPU utilization crossed the 30% threshold you set.
+
+<img width="30000" alt="image" src="https://github.com/blacksmith121/AWS_Projects/blob/main/Resource%20Monitoring%20with%20Cloudwatch/17.png?raw=true)">
+
+Congratulations! You have successfully monitored a resource using Amazon Cloudwatch!
 
